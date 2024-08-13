@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import TotalPitchers from '../TotalPitchers/TotalPitchers.jsx';
+import TotalCatchers from '../TotalCatchers/TotalCatchers.jsx';
 
 function App() {
   const [currentPitcher, setCurrentPitcher] = useState('Maud Nelson');
@@ -38,8 +40,8 @@ function App() {
       <h1>Redux Baseball Pitchers</h1>
       <h2>On the Mound: {currentPitcher}</h2>
       <h2>Behind the Plate: {currentCatcher}</h2>
-      <div>Total Pitchers: {pitcherList.length}</div>
-      <div>Total Catchers: {catcherList.length}</div>
+      <TotalPitchers />
+      <TotalCatchers />
       <h3>All Pitchers</h3>
       <form onSubmit={handlePitcherSubmit}>
         <input
