@@ -22,10 +22,29 @@ const catcherList = (state=[], action) => {
     return state;
 }
 
+const currentPitcher = (state='', action) => {
+    if (action.type === 'CURRENT_PITCHER') {
+        console.log('action.payload is:', action.payload)
+        let newCurrentPitcher = action.payload;
+        return newCurrentPitcher;
+    }
+    return state;
+}
+
+const currentCatcher = (state='', action) => {
+    if (action.type === 'CURRENT_CATCHER') {
+        let newCurrentCatcher = action.payload;
+        return newCurrentCatcher;
+    }
+    return state;
+}
+
 const store = createStore(
     combineReducers({
         pitcherList,
-        catcherList
+        catcherList,
+        currentPitcher,
+        currentCatcher
     }),
     applyMiddleware(logger)
 )
